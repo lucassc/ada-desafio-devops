@@ -1,0 +1,27 @@
+name: ada-frontend
+namespace: frontend
+
+image:
+  repository: schwendler/ada-frontend
+
+deployment:
+  port: 5000
+  enableHeathCheck: false
+  resources:
+    requests:
+      memory: 64Mi
+      cpu: 50m
+    limits:
+      memory: 128Mi
+      cpu: 100m
+
+envVariables:
+  NAME: "LUCAS"
+
+ingress:
+  prefix: ""
+
+emptyDirs:
+  - volumeName: nginx-volume
+    mountPaths:
+      - "/var/cache/nginx"

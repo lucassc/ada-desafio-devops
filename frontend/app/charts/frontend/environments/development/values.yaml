@@ -1,0 +1,12 @@
+environment: development
+
+image:
+  version: 0.2.1
+
+ingress:
+  dnsZone: ""
+  prefix: ""
+
+envVariables:
+  NAME: "LUCAS"
+  APP_API_BASE_URL: ""
