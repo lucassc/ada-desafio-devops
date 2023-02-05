@@ -1,0 +1,24 @@
+name: ada-backend
+namespace: backend
+
+image:
+  repository: schwendler/ada-backend
+  version: 0.4.0
+
+deployment:
+  port: 8080
+  enableHeathCheck: true
+  healthCheckPath: /actuator
+  resources:
+    requests:
+      memory: 400Mi
+      cpu: 100m
+    limits:
+      memory: 600Mi
+      cpu: 200m
+
+ingress:
+  prefix: api.
+
+envVariables:
+  NAME: "LUCAS"
