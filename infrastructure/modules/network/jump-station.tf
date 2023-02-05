@@ -6,7 +6,7 @@ resource "azurerm_resource_group" "jumpstation_rg" {
 
 
 resource "azurerm_subnet" "jump-station" {
-  name                 = "jump-station-subnet"
+  name                 = "${var.environment}-jump-station-subnet"
   resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = azurerm_virtual_network.virtual_network.name
   address_prefixes     = [var.jump_station_subnet]
