@@ -1,12 +1,25 @@
 # Ada DevOps Desafio
 
+A solução foi desenvolvida utilizando as seguintes tecnologias/ferramentas.
+
+  - Azure Cloud
+  - Terraform
+  - Kubernetes
+  - Helm Chart
+  - Docker
+  - Bash scripts
+
+## Diagrama da infraestrutura:
+
+![Diagrama](./docs/images/ada-devops-desafio-diagram.drawio.png)
+
 ## Pré requisitos:
 
-- Azure cli
-- Terraform
-- Helm 3
-- Docker Engine (caso seja necessário alterar alguma imagem de container)
-- Conta na Azure
+- [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
+- [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+- [Helm 3](https://helm.sh/docs/intro/install/)
+- [Docker Engine](https://docs.docker.com/engine/install/) (caso seja necessário alterar alguma imagem de container)
+- Conta na [Azure](https://azure.microsoft.com/en-us/)
 
 Os recursos que serão provisionados levam em consideração as cotas disponíveis para uma conta de estudante.
 
@@ -37,7 +50,7 @@ chmod +x ./infrastructure/provisioning_script.sh && \
 
 Após o provisionamento você poderá acessar a aplicação pelo link no output:
 
-![App link](./images/link-app.png)
+![App link](./docs/images/link-app.png)
 
 ## Um usuário será criado quando a aplicação iniciar:
 
@@ -51,17 +64,17 @@ Se você precisar acessar o banco de dados, utilize a jump-box com Bastion. Toda
 
 Usuário e senha você pode encontrar na definição da jump-box [infrastructure/modules/network/jump-station.tf](./infrastructure/modules/network/jump-station.tf)
 
-![Bastion](./images/bastion.png)
+![Bastion](./docs/images/bastion.png)
  
 ## Monitoramento
 
 No cluster Kubernetes foi realizado o deploy do Prometheus, assim é possível conferir as métricas no Portal:
 
-![Metricas](./images/aks-metricas.png)
+![Metricas](./docs/images/aks-metricas.png)
 
 A coleta de logs também foi configurada:
 
-![Logs](./images/aks-logs.png)
+![Logs](./docs/images/aks-logs.png)
 
 ## Destruindo os recursos
 
